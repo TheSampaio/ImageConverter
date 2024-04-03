@@ -1,0 +1,6 @@
+# Directories
+.vs/
+__pycache__/
+
+# Files
+*.dds
