@@ -26,6 +26,7 @@ class ImageConverter:
         print("\nReading files . . .")
         counter = 0
 
+        # Read all files inside the given folder
         for entry in os.listdir(self.__inputPath):
             path = os.path.join(self.__inputPath, entry)
 
@@ -33,12 +34,11 @@ class ImageConverter:
             if os.path.isfile(path):
                 files.append(path)
 
+        # Store images with or without alpha channel
         for image in files:
-            # Store images with alpha channel
             if (enableAlpha):
                 self.__images.append([image, Image.open(image).convert("RGBA")])
 
-            # Store images without alpha channel
             else:
                 self.__images.append([image, Image.open(image)])
 
